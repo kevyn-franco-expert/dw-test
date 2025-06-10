@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "Habits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for testing the Habits and Check-Ins API"
+  },
+  "item": [
+    {
+      "name": "Get All Habits",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits"]
+        }
+      }
+    },
+    {
+      "name": "Get Habit by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id"]
+        }
+      }
+    },
+    {
+      "name": "Create Habit",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Read a book\",\n  \"description\": \"Read at least 10 pages\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/habits",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits"]
+        }
+      }
+    },
+    {
+      "name": "Update Habit",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Read a book (updated)\",\n  \"description\": \"Read at least 20 pages\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id"]
+        }
+      }
+    },
+    {
+      "name": "Delete Habit",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id"]
+        }
+      }
+    },
+    {
+      "name": "Get All Check-Ins for Habit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id/check-ins",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id", "check-ins"]
+        }
+      }
+    },
+    {
+      "name": "Create Check-In for Habit",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"date\": \"2025-06-09\",\n  \"notes\": \"Did my habit today\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id/check-ins",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id", "check-ins"]
+        }
+      }
+    },
+    {
+      "name": "Delete Check-In",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id/check-ins/:check_in_id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id", "check-ins", ":check_in_id"]
+        }
+      }
+    },
+    {
+      "name": "Get Streaks for Habit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/habits/:habit_id/streaks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["habits", ":habit_id", "streaks"]
+        }
+      }
+    }
+  ]
+}
